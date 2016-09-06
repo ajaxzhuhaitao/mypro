@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .sun {
+            width: 100px;
+            height: 100px;
+            background: aqua;
+            border-radius: 50%;
+            box-shadow: 0 0 50px purple;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .con {
+            position: relative;
+            height: 200px;
+            line-height: 200px;
+            font-size: 40px;
+            text-align: center;
+            font-weight: bold;
+            text-shadow: 0 0 0 #000;
+            margin: 50px auto;
+        }
+
+    </style>
+    <script>
+        window.onload = function () {
+            var oS = document.querySelector('.sun');
+            var oCon = document.querySelector('.con');
+            document.onmousemove = function (ev) {
+                oS.style.left = ev.pageX - oS.offsetWidth / 2 + 'px';
+                oS.style.top = ev.pageY - oS.offsetHeight / 2 + 'px';
+                var x = oCon.offsetLeft + oCon.offsetWidth / 2 - ev.pageX;
+                var y = oCon.offsetTop + oCon.offsetHeight / 2 - ev.pageY;
+                var dis = Math.sqrt(x * x + y * y);
+                oCon.style.textShadow = x / 2 + 'px ' + y / 2 + 'px ' + dis / 10 + 'px blue';
+            };
+        };
+    </script>
+
+</head>
+<body>
+<div class="sun"></div>
+<span class="con">
+关晓彤张雪迎大学宿舍不过如此，关晓彤颜值更是输惨室友
+</span>
+</body>
+</html>

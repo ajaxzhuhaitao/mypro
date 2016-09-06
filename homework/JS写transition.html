@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 200px;
+            height:200px;
+            background:#ccc;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oBox=document.querySelector('.box');
+            oBox.onclick=function(){
+                oBox.style.WebkitTransition="1s all ease";
+                oBox.style.MosTransition="1s all ease";
+                oBox.style.msTransition="1s all ease";
+                oBox.style.transition="1s all ease";
+                oBox.style.width="500px";
+                oBox.style.height="500px";
+            };
+        };
+    </script>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>
