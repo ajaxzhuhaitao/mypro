@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+        /*perspective(800px)透视*/
+            -webkit-transform: perspective(800px) rotateY(-100deg) rotateX(45deg);
+            -webkit-transform-style:preserve-3d;
+        }
+        .box {
+            height: 200px;
+            width: 200px;
+            background: pink;
+            color: aqua;
+            margin: 100px auto;
+            font-size:40px;
+            line-height: 200px;
+            text-align: center;
+            border-radius:50%;
+            -webkit-transform:translateZ(10px);
+            -moz-transform:translateZ(10px);
+            -webkit-transition: 1s all ease;
+        }
+        /*平移*/
+        /*translate(x,y);*/
+        /*translateZ(px); Z轴平移*/
+        .box:active{
+            /*-webkit-transform: translate(200px,600px);*/
+            -webkit-transform: translateZ(200px);
+        }
+    </style>
+    <script></script>
+
+</head>
+<body>
+<div class="box">帅不帅</div>
+</body>
+</html>

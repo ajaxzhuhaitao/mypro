@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 300px;
+            height: 300px;
+            margin: 100px auto;
+            position: relative;
+            -webkit-transform-style: preserve-3d;
+            -webkit-transform: perspective(800px) rotateY(0deg) rotateX(0deg);
+            -webkit-transition: 1s all ease;
+        }
+
+        .box div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color:#fff;
+            text-align: center;
+            line-height: 300px;
+            width: 100%;
+            height: 100%;
+            font-size: 50px;
+        }
+        .box .front {
+            background: aqua;
+            -webkit-transform: translateZ(150px);
+        }
+
+        .box .back {
+            background: blue;
+            -webkit-transform: translateZ(-150px);
+        }
+
+        .box .left {
+            background: yellow;
+            -webkit-transform: translate(-150px, 0) rotateY(-90deg);
+        }
+
+        .box .right {
+            background: pink;
+            -webkit-transform: translate(150px, 0) rotateY(90deg);
+        }
+
+        .box .top {
+            background: red;
+            -webkit-transform: translate(0, -150px) rotateX(90deg);
+        }
+
+        .box .bottom {
+            background: purple;
+            -webkit-transform: translate(0, 150px) rotateX(-90deg);
+        }
+
+        .box:active {
+            -webkit-transform: perspective(800px) rotateY(360deg) rotateX(360deg);
+        }
+
+
+    </style>
+    <script></script>
+
+</head>
+<body>
+<div class="box">
+    <div class="front">我</div>
+    <div class="back">是</div>
+    <div class="left">天</div>
+    <div class="right">下</div>
+    <div class="top">第</div>
+    <div class="bottom">一</div>
+</div>
+
+</body>
+</html>

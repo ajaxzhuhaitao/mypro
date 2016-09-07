@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*-webkit-background-clip:text;彩色文字*/
+        /*1.先设置背景颜色 渐变的*/
+        /*2.-webkit-background-clip:text;*/
+        /*3.把文字颜色设置成透明的。*/
+        .box{
+            height:80px;
+            width:400px;
+            text-align: center;
+            line-height: 80px;
+            border:1px solid #000;
+            background:-webkit-linear-gradient(pink,aqua,blue,red,brown);
+            position:absolute;
+            left:200px;
+            top:80px;
+            -webkit-background-clip:text;
+            font-size: 40px;
+            font-weight: bold;
+            color: rgba(0,0,0,0);
+        }
+    </style>
+    <script></script>
+</head>
+<body >
+<div class="box">
+    就问你帅不帅吧
+</div>
+</body>
+</html>

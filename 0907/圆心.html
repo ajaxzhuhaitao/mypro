@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*改变原心的位置*/
+        /*-webkit-transform-origin*/
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background: purple;
+            margin: 100px auto;
+            -webkit-transform-origin: 100px 200px;
+            -webkit-transition: 0.2s all ease;
+            -webkit-transform: rotateY(0deg);
+        }
+
+        .box:hover{
+            -webkit-transform: rotateY(1080deg);
+        }
+
+    </style>
+    <script></script>
+
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>

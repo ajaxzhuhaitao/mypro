@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            height: 200px;
+            width: 200px;
+            background: pink;
+            color: aqua;
+            margin: 100px auto;
+            font-size:40px;
+            line-height: 200px;
+            text-align: center;
+            border-radius:50%;
+            -webkit-transform: rotate(0deg);
+            -webkit-transition: 1s all ease;
+        }
+        /*rotate默认是绕z轴转*/
+        .box:active{
+            /*-webkit-transform: rotateY(180deg);*/
+            /*-webkit-transform: rotateX(180deg);*/
+            -webkit-transform: rotate(180deg);
+        }
+    </style>
+    <script></script>
+
+</head>
+<body>
+<div class="box">帅不帅</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body {
+            overflow: hidden
+        }
+        .form {
+            width: 400px;
+            height: 400px;
+            border:1px solid #ccc;
+            border-radius: 20px;
+            background: pink;
+            position: absolute;
+            left: 400px;
+            top: 200px;
+            text-align: center;
+            -webkit-transform: scale(5, 5);
+            opacity: 0;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oBtn = document.querySelector('.btn');
+            var oBtn1 = document.querySelector('.btn2');
+            var oForm = document.querySelector('.form');
+            oBtn.onclick = function () {
+                oForm.style.display = 'block';
+                oForm.style.WebkitTransition = ".3s all ease";
+                setTimeout(function () {
+                    oForm.style.opacity = 1;
+                    oForm.style.WebkitTransform = 'scale(1,1)';
+                },0);
+            };
+            oBtn1.onclick=function(){
+                oForm.style.WebkitTransform = 'scale(5,5)';
+                oForm.style.opacity = 0;
+                function transitionEnd(){
+                    oForm.removeEventListener('transitionend',transitionEnd,false);
+                    oForm.style.display='none';
+                }
+                oForm.addEventListener('transitionend',transitionEnd,false);
+            };
+        }
+    </script>
+
+</head>
+<body>
+<a href="javascript:;" class="btn">登录</a>
+<div class="form">
+    <input type="text"><br>
+    <input type="text"><br>
+    <input type="text"><br>
+    <a href="javascript:;" class="btn2">×</a>
+</div>
+
+</body>
+</html>

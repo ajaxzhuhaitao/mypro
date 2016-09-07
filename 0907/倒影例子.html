@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #000;
+        }
+
+        .box {
+            width: 113px;
+            height: 200px;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .box span {
+            position: absolute;
+            left: 0;
+            top: 200px;
+            width: 113px;
+            height: 200px;
+            background: url(img/3.jpg) no-repeat;
+            background-size: 100%;
+            -webkit-transform: scale(1, -1);
+            -webkit-mask:-webkit-linear-gradient(rgba(0, 255, 0, 0), rgba(255, 255, 0, 0.3));
+        }
+    </style>
+    <script></script>
+</head>
+<body>
+<div class="box">
+    <img src="img/3.jpg" alt="">
+    <span></span>
+</div>
+</body>
+</html>
