@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 400px;
+            height: 400px;
+            border: 1px solid #000;
+            text-align: center;
+            line-height: 400px;
+            font-size: 40px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -200px;
+            margin-top: -200px;
+            display: none;
+        }
+
+    </style>
+    <script>
+        window.onload=function(){
+            var oDiv = document.querySelector('div');
+            var oTxt = document.querySelector('#txt1');
+
+            document.ondragover = function (){
+                oDiv.style.display='block';
+                clearTimeout(oDiv.timer);
+                oDiv.timer = setTimeout(function(){
+                    oDiv.style.display='none';
+                },300);
+            };
+            oDiv.ondragenter = function(){
+                oDiv.innerHTML = '请释放鼠标';
+            };
+            oDiv.ondragleave = function(){
+                oDiv.innerHTML = '请将文件拖到此区域';
+            };
+            oDiv.ondragover = function(){
+                return false;
+            };
+
+            oDiv.ondrop = function(ev){
+                //事件ev.dataTransfer.files
+                var oFile = ev.dataTransfer.files[0];
+                var reader=new FileReader();
+                reader.onload=function(){
+                    oTxt.value = (reader.result);
+                };
+                reader.readAsText(oFile);
+                return false;
+            };
+
+        };
+
+    </script>
+
+</head>
+<body>
+<textarea id="txt1" ></textarea>
+<div>请将文件拖到此区域</div>
+</body>
+</html>

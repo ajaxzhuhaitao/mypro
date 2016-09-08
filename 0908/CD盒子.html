@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body{
+            height:100%;
+        }
+        body{
+            width:100%;
+            height:100%;
+            background:url(img/bg.jpg) no-repeat;
+            background-size: 100%;
+        }
+        .box{
+
+            margin:100px auto;
+            position: absolute;
+        }
+        .box span {
+            position:absolute;
+            left:0;
+            top:0;
+            height:200px;
+            width:200px;
+        }
+        .box li{
+         float:left; width:200px; height:200px; margin:50px; position:relative;
+        }
+       .box .top{
+           background:url(img/img_01.jpg);
+           background-size: 100%;
+           z-index: 2;
+           -webkit-transform: translate(0,0);
+           -webkit-transition: 1s all ease;
+       }
+        .box .bot{
+            background:url(img/cd.png);
+            background-size: 100%;
+            -webkit-transform: translate(0,0) rotate(0deg);
+            -webkit-transition: 1s all ease;
+        }
+        li:active .top{
+            -webkit-transform: translate(0,30px);
+        }
+        li:active .bot{
+            -webkit-transform: translate(0,-30px) rotate(360deg);
+        }
+
+    </style>
+    <script></script>
+</head>
+<body>
+<ul class="box">
+    <li>
+        <span class="top"></span>
+        <span class="bot"></span>
+    </li>
+    <li>
+        <span class="top"></span>
+        <span class="bot"></span>
+    </li>
+    <li>
+        <span class="top"></span>
+        <span class="bot"></span>
+    </li>
+    <li>
+        <span class="top"></span>
+        <span class="bot"></span>
+    </li>
+
+
+</ul>
+
+</body>
+</html>
